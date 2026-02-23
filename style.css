@@ -369,7 +369,19 @@ footer {
     padding-bottom: 15px;
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) transparent;
+}
 
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 10px;
 }
 
 .carousel-item {
