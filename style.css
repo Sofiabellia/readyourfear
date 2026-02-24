@@ -360,36 +360,58 @@ footer {
     color: #666;
 }
 
-/* 6. CAROUSEL */
-.carousel-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 30px;
+/* 6. CAROUSEL*/
+.css-carousel {
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.css-carousel input[type="radio"] {
+    display: none;
+}
+
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
     padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
-
-    /* Supporto Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) transparent;
 }
 
-.carousel-container::-webkit-scrollbar {
-    height: 8px;
+.radio-slide-1:checked~.carousel-window .carousel-track {
+    transform: translateX(0px);
 }
 
-.carousel-container::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 10px;
+.radio-slide-2:checked~.carousel-window .carousel-track {
+    transform: translateX(-330px);
 }
 
-.carousel-container::-webkit-scrollbar-thumb {
-    background-color: var(--color-accent);
-    border-radius: 10px;
+.radio-slide-3:checked~.carousel-window .carousel-track {
+    transform: translateX(-660px);
+}
+
+.radio-slide-4:checked~.carousel-window .carousel-track {
+    transform: translateX(-990px);
+}
+
+.radio-slide-5:checked~.carousel-window .carousel-track {
+    transform: translateX(-1320px);
+}
+
+.radio-slide-6:checked~.carousel-window .carousel-track {
+    transform: translateX(-1650px);
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    flex: 0 0 300px;
-    scroll-snap-align: start;
+    width: 300px;
 }
 
 .carousel-item .arch-img {
@@ -398,6 +420,91 @@ footer {
     border-radius: 300px 300px 0 0;
 }
 
+.carousel-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+}
+
+
+.carousel-arrow:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.carousel-arrow.indietro {
+    left: -25px;
+}
+
+.carousel-arrow.avanti {
+    right: -25px;
+}
+
+
+.radio-slide-1:checked~.freccia-avanti-2 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-2:checked~.freccia-indietro-1 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-2:checked~.freccia-avanti-3 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-3:checked~.freccia-indietro-2 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-3:checked~.freccia-avanti-4 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-4:checked~.freccia-indietro-3 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-4:checked~.freccia-avanti-5 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-5:checked~.freccia-indietro-4 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-5:checked~.freccia-avanti-6 {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.radio-slide-6:checked~.freccia-indietro-5 {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /* 7. MOBILE (< 768px) */
 @media (max-width: 768px) {
@@ -483,13 +590,51 @@ footer {
         max-width: 200px;
     }
 
-    /* Carousel Mobile */
-    .carousel-container {
-        gap: 20px;
-        width: 100%;
-    }
-
+    /* CSS ONLY CAROUSEL MOBILE LOGIC (w: 260px + gap 20px = 280px) */
     .carousel-item {
         flex: 0 0 260px;
+    }
+
+    .carousel-track {
+        gap: 20px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .carousel-arrow.indietro {
+        left: -10px;
+    }
+
+    .carousel-arrow.avanti {
+        right: -10px;
+    }
+
+    /* Spostamento pista su Mobile */
+    .radio-slide-1:checked~.carousel-window .carousel-track {
+        transform: translateX(0px);
+    }
+
+    .radio-slide-2:checked~.carousel-window .carousel-track {
+        transform: translateX(-280px);
+    }
+
+    .radio-slide-3:checked~.carousel-window .carousel-track {
+        transform: translateX(-560px);
+    }
+
+    .radio-slide-4:checked~.carousel-window .carousel-track {
+        transform: translateX(-840px);
+    }
+
+    .radio-slide-5:checked~.carousel-window .carousel-track {
+        transform: translateX(-1120px);
+    }
+
+    .radio-slide-6:checked~.carousel-window .carousel-track {
+        transform: translateX(-1400px);
     }
 }
