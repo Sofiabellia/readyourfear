@@ -363,33 +363,23 @@ footer {
 /* 6. CAROUSEL */
 .carousel-container {
     display: flex;
-    overflow-x: scroll;
-    /* Scroll è più rigoroso di auto per forzare la barra */
+    overflow-x: auto;
     gap: 30px;
     padding-bottom: 20px;
     scroll-snap-type: x mandatory;
 
-    /* Supporto Firefox con falsa trasparenza */
+    /* Supporto Firefox */
     scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) var(--color-bg);
+    scrollbar-color: var(--color-accent) transparent;
 }
 
 .carousel-container::-webkit-scrollbar {
-    -webkit-appearance: none;
-    height: 6px;
+    height: 8px;
 }
 
-/* IL TRUCCO MAC: Falsa Trasparenza */
 .carousel-container::-webkit-scrollbar-track {
-    background-color: var(--color-bg);
-    /* Colore solido uguale allo sfondo del sito */
-    margin: 0 150px;
-    /* Centra e accorcia la barra in modo pulito */
-}
-
-/* Gestione dello sfondo per i caroselli nelle sezioni grigie */
-.bg-grey .carousel-container::-webkit-scrollbar-track {
-    background-color: var(--color-grey);
+    background-color: transparent;
+    border-radius: 10px;
 }
 
 .carousel-container::-webkit-scrollbar-thumb {
