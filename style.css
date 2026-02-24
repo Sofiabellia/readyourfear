@@ -360,23 +360,25 @@ footer {
     color: #666;
 }
 
-/* 6. CAROUSEL*/
-
+/* 6. CAROUSEL */
 .carousel-container {
     display: flex;
     overflow-x: auto;
     gap: 30px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) transparent;
 }
 
 .carousel-container::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
+    -webkit-appearance: none;
 }
 
 .carousel-container::-webkit-scrollbar-track {
     background: transparent;
+    margin: 0 150px;
 }
 
 .carousel-container::-webkit-scrollbar-thumb {
@@ -386,6 +388,7 @@ footer {
 
 .carousel-item {
     flex: 0 0 300px;
+    scroll-snap-align: start;
 }
 
 .carousel-item .arch-img {
@@ -393,7 +396,6 @@ footer {
     height: 400px;
     border-radius: 300px 300px 0 0;
 }
-
 
 
 /* 7. MOBILE (< 768px) */
