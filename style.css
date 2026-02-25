@@ -361,13 +361,13 @@ footer {
 }
 
 /* 6. CAROUSEL*/
-.css-carousel {
+.carousel {
     position: relative;
     width: 100%;
     margin: 40px auto;
 }
 
-.css-carousel input[type="radio"] {
+.carousel input[type="radio"] {
     display: none;
 }
 
@@ -405,7 +405,6 @@ footer {
 .carousel-track {
     display: flex;
     gap: 30px;
-    width: max-content;
     width: max-content;
     transition: transform 0.5s ease-in-out;
 }
@@ -455,52 +454,15 @@ footer {
     right: -25px;
 }
 
-
-.radio-slide-1:checked~.freccia-avanti-2 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-2:checked~.freccia-indietro-1 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-2:checked~.freccia-avanti-3 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-3:checked~.freccia-indietro-2 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-3:checked~.freccia-avanti-4 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-4:checked~.freccia-indietro-3 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-4:checked~.freccia-avanti-5 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-5:checked~.freccia-indietro-4 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.radio-slide-5:checked~.freccia-avanti-6 {
-    opacity: 1;
-    pointer-events: auto;
-}
-
+.radio-slide-1:checked~.freccia-avanti-2,
+.radio-slide-2:checked~.freccia-indietro-1,
+.radio-slide-2:checked~.freccia-avanti-3,
+.radio-slide-3:checked~.freccia-indietro-2,
+.radio-slide-3:checked~.freccia-avanti-4,
+.radio-slide-4:checked~.freccia-indietro-3,
+.radio-slide-4:checked~.freccia-avanti-5,
+.radio-slide-5:checked~.freccia-indietro-4,
+.radio-slide-5:checked~.freccia-avanti-6,
 .radio-slide-6:checked~.freccia-indietro-5 {
     opacity: 1;
     pointer-events: auto;
@@ -590,7 +552,6 @@ footer {
         max-width: 200px;
     }
 
-    /* CSS ONLY CAROUSEL MOBILE LOGIC (w: 260px + gap 20px = 280px) */
     .carousel-item {
         flex: 0 0 260px;
     }
@@ -613,7 +574,6 @@ footer {
         right: -10px;
     }
 
-    /* Spostamento pista su Mobile */
     .radio-slide-1:checked~.carousel-window .carousel-track {
         transform: translateX(0px);
     }
